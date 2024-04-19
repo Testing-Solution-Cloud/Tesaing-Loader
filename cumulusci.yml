@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Tesaing-Loader
+    package:
+        name: Tesaing-Loader
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Tesaing-Loader/tests
+            options:
+                outputdir: robot/Tesaing-Loader/results
+
+    robot_testdoc:
+        options:
+            path: robot/Tesaing-Loader/tests
+            output: robot/Tesaing-Loader/doc/Tesaing-Loader_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
